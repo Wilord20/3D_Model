@@ -5,9 +5,9 @@ import gsap from "gsap";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  75,
+  70,
   window.innerWidth / window.innerHeight,
-  0.1,
+  1,
   1000
 );
 const renderer = new THREE.WebGLRenderer({
@@ -50,8 +50,8 @@ function onDocumentMouseDown(event) {
   const intersects = raycaster.intersectObjects(scene.children, true);
 
   if (intersects.length > 0) {
-    const jumpHeight = 1.5;
-    const jumpDuration = 0.4;
+    const jumpHeight = 1;
+    const jumpDuration = 0.3;
     gsap.to(shiba.position, {
       y: jumpHeight,
       duration: jumpDuration,
